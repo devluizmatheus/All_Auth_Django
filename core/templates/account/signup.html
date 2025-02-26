@@ -1,0 +1,55 @@
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Meu Site</title>
+</head>
+<body>
+    <h1>Cadastro</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Campos personalizados -->
+        <div>
+            <label for="id_nome">Nome</label>
+            {{ form.nome }}
+        </div>
+
+        <div>
+            <label for="id_sobrenome">Sobrenome</label>
+            {{ form.sobrenome }}
+        </div>
+
+        <div>
+            <label for="id_data_nascimento">Data de Nascimento</label>
+            {{ form.data_nascimento }}
+        </div>
+
+        <div>
+            <label for="id_telefone">Telefone</label>
+            {{ form.telefone }}
+        </div>
+
+        <div>
+            <label for="id_CPF">CPF</label>
+            {{ form.CPF }}
+        </div>
+
+        <!-- Campo de interesses -->
+        <div>
+            <label for="id_interesses">Interesses</label>
+            {{ form.interesses }}
+        </div>
+
+        <!-- Botão de envio -->
+        <div>
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
+</body>
+</html>
